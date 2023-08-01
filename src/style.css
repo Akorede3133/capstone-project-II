@@ -21,3 +21,47 @@ header img {
     border-radius: 5px;
     width: 50px;
 }
+main {
+    width: 90%;
+    margin: 10px auto;
+}
+.shows--container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 2rem;
+}
+.show--info {
+    width: 100%;
+}
+.show--thumbnail img {
+    width: 100%;
+    border-radius: 5px;
+}
+.show--counts {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.show--counts {
+    font-size: 0.9em;
+}
+.show--likes {
+    display: flex;
+    flex-direction: column;
+}
+.show--likes i {
+    align-self: flex-end;
+}
+.fa-solid.fa-heart {
+    display: none;
+}
+.comments--btn {
+    padding: 7px 20px;
+    border: none;
+    background-color: rgba(0, 0, 255, 0.697);
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 4px;
+    color: white;
+    letter-spacing: 1.2px;
+}
