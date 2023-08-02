@@ -116,7 +116,17 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\r\n\n\n//# sourceURL=webpack://webpack-setup/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_show_class_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/show_class.js */ \"./src/modules/show_class.js\");\n\r\n\r\n_modules_show_class_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].displayShows();\n\n//# sourceURL=webpack://webpack-setup/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/show_class.js":
+/*!***********************************!*\
+  !*** ./src/modules/show_class.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Show)\n/* harmony export */ });\nclass Show {\r\n  constructor() {\r\n    this.showsContainer = document.querySelector('.shows--container');\r\n    // this.showId = '7eeZSxoE9qlr2meDvNAi';\r\n    // this.showId = 'HA6T9JcmdjaALtObT86k';\r\n    this.showId = 'Zrj6oLFHff3PIwzqVfDg';\r\n    this.commentID = '';\r\n    // HA6T9JcmdjaALtObT86k\r\n    // qN4F0k3AjslqJdg5LeJa\r\n    // Zrj6oLFHff3PIwzqVfDg\r\n  }\r\n  fetchShows = async (url) => {\r\n    try {\r\n      const response = await fetch(url);\r\n      const data = await response.json();\r\n      return data;\r\n    } catch (error) {\r\n      return error\r\n    }\r\n  }\r\n  displayShows =  async () => {\r\n    const shows = await this.fetchShows('https://api.tvmaze.com/shows');\r\n    const elements = shows.slice(0, 30).map((show) => {\r\n      const {image: {medium}, name, id, likes} = show;\r\n      const showElement = `<div class=\"show--info\">\r\n      <div class=\"show--details\">\r\n        <div class=\"show--thumbnail\">\r\n            <img src=${medium} alt=\"\">\r\n        </div>\r\n        <div class=\"show--counts\">\r\n          <p class=\"show--name\">${name}</p>\r\n          <div class=\"show--likes\">\r\n            <i class=\"fa-regular fa-heart\" id=${id}></i>\r\n            <i class=\"fa-solid fa-heart\"></i>\r\n            <p class=\"show--likes--count\">\r\n                <span class=\"likes--count\" id=${id}></span> likes\r\n            </p>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <button class=\"comments--btn\" id=${id}>Comments</button>\r\n    </div>`\r\n    return showElement;\r\n    }).join('');\r\n    this.showsContainer.insertAdjacentHTML('beforeend', elements);\r\n  }\r\n\r\n}\n\n//# sourceURL=webpack://webpack-setup/./src/modules/show_class.js?");
 
 /***/ })
 
