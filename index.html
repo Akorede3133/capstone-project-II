@@ -16,6 +16,27 @@
     </div>
     <h3>Shows(<span>7</span>)</h3>
   </header>
+  <main>
+    <section class="shows--container">      
+      <div class="show--info">
+        <div class="show--details">
+          <div class="show--thumbnail">
+            <img src="https://static.tvmaze.com/uploads/images/original_untouched/81/202627.jpg" alt="">
+          </div>
+          <div class="show--counts">
+            <p class="show--name">${name}</p>
+            <div class="show--likes">
+              <i class="fa-regular fa-heart" id=${id}></i>
+              <i class="fa-solid fa-heart"></i>
+              <p class="show--likes--count">
+                  <span class="likes--count" id=${id}></span> likes
+              </p>
+            </div>
+          </div>
+        </div>
+        <button class="comments--btn" id=${id}>Comments</button>
+      </div>
+    </section>
 </body>
 <footer>
   <p>Created by Nelofar and Akorede under CC license</p>
