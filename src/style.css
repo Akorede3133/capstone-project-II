@@ -30,6 +30,63 @@ header img {
     border-radius: 5px;
     width: 50px;
 }
+main {
+    width: 90%;
+    margin: 10px auto;
+}
+.shows--container {
+    display: grid;
+    /* display: none; */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 2rem;
+    color: #fff;
+}
+.show--info {
+    width: 100%;
+}
+.show--thumbnail img {
+    width: 100%;
+    border-radius: 5px;
+}
+.show--counts {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.show--counts {
+    font-size: 0.9em;
+}
+.show--name {
+  font-size: 0.8rem;
+  align-self: center;
+}
+.show--likes {
+    display: flex;
+    flex-direction: column;
+}
+.show--likes i {
+    align-self: flex-end;
+}
+.fa-heart {
+  cursor: pointer;
+}
+.fa-solid.fa-heart {
+    display: none;
+}
+.comments--btn {
+    padding: 7px 20px;
+    border: none;
+    background-color: rgba(0, 0, 255, 0.697);
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 4px;
+    color: white;
+    letter-spacing: 1.2px;
+    cursor: pointer;
+}
+.comments--btn:hover {
+  opacity: 0.7;
+}
 footer {
   position: absolute;
   bottom: 0;
