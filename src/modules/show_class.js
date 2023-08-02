@@ -1,4 +1,4 @@
-export default class Show {
+class Show {
   constructor() {
     this.showsContainer = document.querySelector('.shows--container');
     // this.showId = '7eeZSxoE9qlr2meDvNAi';
@@ -46,3 +46,6 @@ export default class Show {
   }
 
 }
+const show = new Show();
+
+export default show;
