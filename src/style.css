@@ -10,6 +10,7 @@ body {
     font-family: 'Lato', sans-serif;
     position: relative;
     background-color: black;
+    height: 100vh;
 }
 ul {
   list-style: none;
@@ -28,4 +29,15 @@ header {
 header img {
     border-radius: 5px;
     width: 50px;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: blue;
+  padding:10px 20px;
+}
+footer p {
+  font-size: 0.8rem;
+  color: #fff;
 }
