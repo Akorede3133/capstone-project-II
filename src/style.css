@@ -90,6 +90,7 @@ main {
 footer {
   position: absolute;
   bottom: 0;
+  left: 0;
   width: 100%;
   background-color: blue;
   padding:10px 20px;
