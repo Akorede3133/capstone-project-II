@@ -10,6 +10,7 @@ class Show {
     this.form = document.querySelector('form');
     this.commentInput = document.querySelector('textarea');
     this.nameInput = document.querySelector('#name');
+    this.homeCounter = document.querySelector('.home--counter');
     // this.showId = '7eeZSxoE9qlr2meDvNAi';
     // this.showId = 'HA6T9JcmdjaALtObT86k';
     this.showId = 'Zrj6oLFHff3PIwzqVfDg';
@@ -44,8 +45,9 @@ class Show {
       <button class="comments--btn" id=${id}>Comments</button>
     </div>`;
       return showElement;
-    }).join('');
-    this.showsContainer.insertAdjacentHTML('beforeend', elements);
+    });
+    this.showsContainer.insertAdjacentHTML('beforeend', elements.join(''));
+    this.homeCounter.textContent = this.countShows(elements);
     this.displayPopUp();
     this.hidePopUp();
     this.updateLikes();
@@ -206,6 +208,8 @@ class Show {
       }
     });
   }
+
+  countShows = (shows) => shows.length;
 }
 const show = new Show();
 export default show;
