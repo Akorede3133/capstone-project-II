@@ -3,7 +3,6 @@ class FetchData {
 
   postsUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps';
 
-  commentsUrl = ''
   fetchShows = async () => {
     try {
       const response = await fetch(this.showsUrl);
@@ -55,32 +54,32 @@ class FetchData {
   postComments = async (id, name, comment, showId) => {
     try {
       const response = await fetch(`${this.postsUrl}/${showId}/comments/`, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json"
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          "item_id": id,
-          "username": name,
-          "comment": comment,
-      })
+          item_id: id,
+          username: name,
+          comment,
+        }),
       });
       const data = await response.text();
-      console.log(data);
+      return data;
     } catch (error) {
       return error;
     }
   }
+
   getComments = async (id, showId) => {
     try {
-     const response = await fetch(`${this.postsUrl}/${showId}/comments?item_id=${id}`);
-     const data = await response.json();
-    //  console.log(data);
-     return data;
+      const response = await fetch(`${this.postsUrl}/${showId}/comments?item_id=${id}`);
+      const data = await response.json();
+      return data;
     } catch (error) {
-     return error
+      return error;
     }
-   }
+  }
 }
 const fecthData = new FetchData();
 export default fecthData;

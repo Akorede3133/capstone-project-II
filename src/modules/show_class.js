@@ -74,7 +74,11 @@ class Show {
 
   CreatePopUpInterface = async (data) => {
     const {
-      language, name, genres, rating: { average }, weight, premiered, image: { original }, summary, id,
+      language,
+      name, genres,
+      rating: { average },
+      weight, premiered,
+      image: { original }, summary, id,
     } = data;
     this.popUpContainer.innerHTML = '';
     const element = ` <div class="pop--up--img">
@@ -169,38 +173,38 @@ class Show {
     });
   }
 
-  updateCommentDisplay = async (id, container, ) => {
+  updateCommentDisplay = async (id, container) => {
     try {
       const comments = await fecthData.getComments(id, this.showId);
       const element = comments.map((comment) => {
-        const { username, creation_date, comment: text } = comment
+        const { username, creation_date: date, comment: text } = comment;
         const li = `<li>
-        <span class="date">${creation_date} </span>
+        <span class="date">${date} </span>
         <span class="comment--name">${username}: </span>
         <span class="comment-text">
         ${text}
         </span>
       </li>`;
-      return li;
+        return li;
       }).join('');
       container.insertAdjacentHTML('beforeend', element);
-      
+      return comments;
     } catch (error) {
       return error;
     }
   }
+
   submitComments = () => {
     this.form.addEventListener('submit', (e) => {
       e.preventDefault();
       const name = this.nameInput.value;
       const comment = this.commentInput.value;
-      console.log(this.commentID);
       if (name && comment) {
         fecthData.postComments(this.commentID, name, comment, this.showId);
         this.popUpSection.classList.add('hide--pop--up');
         this.form.reset();
       }
-    })
+    });
   }
 }
 const show = new Show();
