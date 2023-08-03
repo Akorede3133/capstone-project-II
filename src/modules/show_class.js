@@ -70,7 +70,7 @@ class Show {
 
   CreatePopUpInterface = async (data) => {
     const {
-      language, name, genres, rating: { average }, weight, premiered, image: { original }, summary,
+      language, name, genres, rating: { average }, weight, premiered, image: { original }, summary, id,
     } = data;
     this.popUpContainer.innerHTML = '';
     const element = ` <div class="pop--up--img">
@@ -94,8 +94,9 @@ class Show {
     </ul>
   </div>`;
     this.popUpContainer.insertAdjacentHTML('beforeend', element);
-    // this.popUpSection.style.display = 'block';
     this.popUpSection.classList.remove('hide--pop--up');
+    const commentsContainer = document.querySelector('.comments--list');
+    this.updateCommentDisplay(id, commentsContainer);
   }
 
   hidePopUp = () => {
@@ -162,6 +163,27 @@ class Show {
         filledLove.style.display = 'block';
       }
     });
+  }
+
+  updateCommentDisplay = async (id, container, ) => {
+    try {
+      const comments = await fecthData.getComments(id, this.showId);
+      const element = comments.map((comment) => {
+        const { username, creation_date, comment: text } = comment
+        const li = `<li>
+        <span class="date">${creation_date} </span>
+        <span class="comment--name">${username}: </span>
+        <span class="comment-text">
+        ${text}
+        </span>
+      </li>`;
+      return li;
+      }).join('');
+      container.insertAdjacentHTML('beforeend', element);
+      
+    } catch (error) {
+      return error;
+    }
   }
 }
 const show = new Show();
