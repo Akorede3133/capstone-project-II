@@ -9,19 +9,23 @@ class Show {
     // qN4F0k3AjslqJdg5LeJa
     // Zrj6oLFHff3PIwzqVfDg
   }
+
   fetchShows = async (url) => {
     try {
       const response = await fetch(url);
       const data = await response.json();
       return data;
     } catch (error) {
-      return error
+      return error;
     }
   }
-  displayShows =  async () => {
+
+  displayShows = async () => {
     const shows = await this.fetchShows('https://api.tvmaze.com/shows');
     const elements = shows.slice(0, 30).map((show) => {
-      const {image: {medium}, name, id, likes} = show;
+      const {
+        image: { medium }, name, id,
+      } = show;
       const showElement = `<div class="show--info">
       <div class="show--details">
         <div class="show--thumbnail">
@@ -39,12 +43,11 @@ class Show {
         </div>
       </div>
       <button class="comments--btn" id=${id}>Comments</button>
-    </div>`
-    return showElement;
+    </div>`;
+      return showElement;
     }).join('');
     this.showsContainer.insertAdjacentHTML('beforeend', elements);
   }
-
 }
 const show = new Show();
 
