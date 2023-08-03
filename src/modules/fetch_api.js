@@ -54,7 +54,7 @@ class FetchData {
 
   postComments = async (id, name, comment, showId) => {
     try {
-      const response = await fetch(`https://${this.postsUrl}/${showId}/comments/`, {
+      const response = await fetch(`${this.postsUrl}/${showId}/comments/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

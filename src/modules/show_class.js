@@ -7,7 +7,9 @@ class Show {
     this.popUpSection = document.querySelector('.pop--up--section');
     this.closePopUpBtn = document.querySelector('.fa-close');
     this.windowHeight = window.scrollY;
-
+    this.form = document.querySelector('form');
+    this.commentInput = document.querySelector('textarea');
+    this.nameInput = document.querySelector('#name');
     // this.showId = '7eeZSxoE9qlr2meDvNAi';
     // this.showId = 'HA6T9JcmdjaALtObT86k';
     this.showId = 'Zrj6oLFHff3PIwzqVfDg';
@@ -48,6 +50,7 @@ class Show {
     this.hidePopUp();
     this.updateLikes();
     this.updateLikesCount();
+    this.submitComments();
   }
 
   displayPopUp = () => {
@@ -55,6 +58,7 @@ class Show {
     commentBtns.forEach((btn) => {
       btn.addEventListener('click', async (e) => {
         const { id } = e.target;
+        this.commentID = id;
         try {
           const shows = await fecthData.fetchSingleShows(id);
           window.scrollTo(0, 0);
@@ -184,6 +188,19 @@ class Show {
     } catch (error) {
       return error;
     }
+  }
+  submitComments = () => {
+    this.form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = this.nameInput.value;
+      const comment = this.commentInput.value;
+      console.log(this.commentID);
+      if (name && comment) {
+        fecthData.postComments(this.commentID, name, comment, this.showId);
+        this.popUpSection.classList.add('hide--pop--up');
+        this.form.reset();
+      }
+    })
   }
 }
 const show = new Show();
