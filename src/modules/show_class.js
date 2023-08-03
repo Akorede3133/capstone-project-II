@@ -212,12 +212,13 @@ class Show {
   }
 
   countShows = (shows) => shows.length;
+
   countComments = (items) => items.length;
+
   displayCommentCount = async (id, elem) => {
     const comments = await fecthData.getComments(id, this.showId);
     const length = this.countComments(comments);
-    elem.textContent = length ? length : 0;
-
+    elem.textContent = length || 0;
   }
 }
 const show = new Show();
