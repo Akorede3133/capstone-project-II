@@ -4,8 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capstone project - API-based webapp</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+  />
 <script defer src="main.js"></script></head>
 <body>
-    <h1>Hello webpack!</h1>
+  <header>
+    <div class="header--logo">
+        <img src="https://t3.ftcdn.net/jpg/04/51/58/76/240_F_451587634_iVJKobsbjLpbtBY0HTkZ2tzgUVGHfzEU.jpg" alt="TV logo">
+    </div>
+    <h3>Shows(<span>7</span>)</h3>
+  </header>
+  <main>
+    <section class="shows--container">      
+     
+    </section>
+    <section class="pop--up--section hide--pop--up">
+      <i class="fa-solid fa-close"></i>
+     <div class="pop--up--container">
+      <div  class="single--show--detail">
+        <div class="pop--up--img">
+          <img src="https://static.tvmaze.com/uploads/images/original_untouched/81/202627.jpg" alt="">
+        </div>
+        <div class="pop--up--desc">
+          <h3 class="show--name">Show 3</h3>
+          <p><b>Under the Dome</b> is the story of a small town that is suddenly and inexplicably sealed off from the rest of the world by an enormous transparent dome. The town's inhabitants must deal with surviving the post-apocalyptic conditions while searching for answers about the dome, where it came from and if and when it will go away.</p>
+          <ul class="pop--up--info">
+            <li class="show--title">Name: <span>Under the Dome</span></li>
+            <li class="">Language: <span>English</span></li>
+            <li class="show--rating">Rating: <span>6.5</span></li>
+            <li class="show--weight">Weight: <span>99</span></li>
+            <li class="show--genre">Weight: <span>Drama</span></li>
+            <li class="show--premiered">premiered: <span>2013-06-24</span></li>
+          </ul>
+        </div>
+        <div class="comments--container">
+          <h4>Comments (<span>2</span>)</h4>
+          <ul class="comments--list">
+            <li>
+              <span class="date">03/11/2021</span>
+              <span class="comment--name">Alex:</span>
+              <span class="comment-text">
+                I'd love to buy it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem modi, eligendi voluptate laboriosam neque ducimus numquam quae id nulla at ullam fuga excepturi vero nisi? A quos cum voluptatem?
+              </span>
+            </li>
+            <li>
+              <span class="date">03/11/2021</span>
+              <span class="comment--name">Alex:</span>
+              <span class="comment-text">
+                I'd love to buy it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem modi, eligendi voluptate laboriosam neque ducimus numquam quae id nulla at ullam fuga excepturi vero nisi? A quos cum voluptatem?
+              </span>
+            </li>
+            <li>
+              <span class="date">03/11/2021</span>
+              <span class="comment--name">Alex:</span>
+              <span class="comment-text">
+                I'd love to buy it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem modi, eligendi voluptate laboriosam neque ducimus numquam quae id nulla at ullam fuga excepturi vero nisi? A quos cum voluptatem?
+              </span>
+            </li>
+          </ul> 
+        </div>
+      </div>
+      <form action="">
+        <h4>Add a comment</h4>
+        <input type="text" name="name" id="name" placeholder="your name">
+        <textarea name="comment" id="comment" placeholder="Your insights"></textarea>
+        <button type="submit">Comment</button>
+      </form>
+     </div>
+    </section>
 </body>
+<footer>
+  <p>Created by Nelofar and Akorede under CC license</p>
+</footer>
 </html>
