@@ -1,5 +1,5 @@
 import fecthData from './fetch_api.js';
-
+import counter from './counter.js';
 class Show {
   constructor() {
     this.showsContainer = document.querySelector('.shows--container');
@@ -47,7 +47,7 @@ class Show {
       return showElement;
     });
     this.showsContainer.insertAdjacentHTML('beforeend', elements.join(''));
-    this.homeCounter.textContent = this.countShows(elements);
+    this.homeCounter.textContent = counter.countShows(elements);
     this.displayPopUp();
     this.hidePopUp();
     this.updateLikes();
@@ -217,9 +217,8 @@ class Show {
 
   displayCommentCount = async (id, elem) => {
     const comments = await fecthData.getComments(id, this.showId);
-    const length = this.countComments(comments);
+    const length = counter.countComments(comments);
     elem.textContent = length || 0;
   }
 }
-const show = new Show();
-export default show;
+export default Show;
