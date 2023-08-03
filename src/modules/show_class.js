@@ -1,5 +1,6 @@
 import fecthData from './fetch_api.js';
 import counter from './counter.js';
+
 class Show {
   constructor() {
     this.showsContainer = document.querySelector('.shows--container');
@@ -221,4 +222,5 @@ class Show {
     elem.textContent = length || 0;
   }
 }
-export default Show;
+const show = new Show();
+export default show;
