@@ -1,4 +1,4 @@
 import './style.css';
-import Show from './modules/show_class.js';
-const show = new Show();
+import show from './modules/show_class.js';
+
 show.displayShows();
