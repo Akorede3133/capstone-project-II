@@ -1,4 +1,5 @@
 import counter from '../modules/counter.js';
+
 describe('Shows counter test', () => {
   const shows = [
     {
