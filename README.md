@@ -7,7 +7,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 javaScript capstone project ](#-capstone-project-II-)
+- [JavaScript capstone project ](#javascript-capstone-project-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -44,11 +44,11 @@ Welcome to the NELAK TV Shows API App! This is a JavaScript-based application th
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- Not Available
+- [Visit our live project](https://akorede3133.github.io/capstone-project-II/dist/)
 
 ## 🚀 Description Video<a name="video-demo"></a>
 
-- Not Available
+- [Link to our description video](https://drive.google.com/file/d/1NFatQ0qTu5ukbuAFZvr0sqFRXZIOfK7G/view?usp=sharing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
