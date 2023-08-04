@@ -43,6 +43,15 @@ header img {
   width: 50px;
 }
 
+header .title {
+  font-size: 1.1rem;
+  font-family: cursive;
+}
+
+header span {
+  font-size: 0.9rem;
+}
+
 main {
   width: 90%;
   margin: 25px auto;
@@ -50,8 +59,6 @@ main {
 
 .shows--container {
   display: grid;
-
-  /* display: none; */
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 2rem;
   color: #fff;
@@ -64,6 +71,19 @@ main {
 .show--thumbnail img {
   width: 100%;
   border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s linear;
+}
+
+.pop--up--img img {
+  width: 100%;
+  margin: auto;
+  display: block;
+  height: 350px;
+}
+
+.show--thumbnail img:hover {
+  transform: scale(1.06);
 }
 
 .show--counts {
@@ -109,6 +129,10 @@ main {
   color: white;
   letter-spacing: 1.2px;
   cursor: pointer;
+}
+
+.comments--btn:focus {
+  background-color: rgba(0, 0, 255, 0.264);
 }
 
 .comments--btn:hover {
@@ -172,15 +196,10 @@ footer p {
   margin-top: 10px;
 }
 
-.pop--up--img img {
-  width: 100%;
-  margin: auto;
-  display: block;
-  height: 250px;
-}
-
 .pop--up--desc .show--name {
   text-align: center;
+  font-size: 1.2rem;
+  color: blue;
 }
 
 .pop--up--info {
@@ -190,8 +209,20 @@ footer p {
   gap: 1rem 2rem;
 }
 
+.pop--up--info li {
+  font-size: 1rem;
+  color: gray;
+}
+
 .pop--up--container p {
   font-size: 0.9em;
+}
+
+.pop--up--desc > p {
+  font-size: 0.9rem;
+  color: gray;
+  padding-top: 5px;
+  letter-spacing: 1px;
 }
 
 .comments--container {
@@ -202,6 +233,7 @@ form h4,
 .comments--container h4 {
   text-align: center;
   padding: 10px 0;
+  color: blue;
 }
 
 .comments--list {
