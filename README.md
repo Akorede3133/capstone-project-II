@@ -48,7 +48,7 @@ Welcome to the NELAK TV Shows API App! This is a JavaScript-based application th
 
 ## 🚀 Description Video<a name="video-demo"></a>
 
-- [Link to our description video](https://drive.google.com/file/d/1NFatQ0qTu5ukbuAFZvr0sqFRXZIOfK7G/view?usp=sharing)
+- [Link to our description video](https://akorede3133.github.io/capstone-project-II/dist/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
